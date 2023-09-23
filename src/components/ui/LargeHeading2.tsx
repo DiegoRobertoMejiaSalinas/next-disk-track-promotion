@@ -11,13 +11,13 @@ interface LargeHeading2Props
     VariantProps<typeof headingVariants> {}
 
 const headingVariants = cva(
-  "max-w-prose text-slate-700 dark:text-slate-300 font-medium mx-auto",
+  "max-w-prose text-slate-700 dark:text-slate-300 font-medium mx-auto text-center",
   {
     variants: {
       size: {
         default: "text-4xl md:text-5xl lg:text-6xl",
         sm: "text-2xl md:text-3xl",
-        lg: "text-5xl md:text-6x lg:text-8xl",
+        lg: "text-7xl md:text-8xl lg:text-9xl",
       },
     },
     defaultVariants: {
