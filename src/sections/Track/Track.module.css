@@ -1,0 +1,18 @@
+.first_circle {
+  clip-path: circle(20% at 50% 50%);
+}
+
+.second_circle {
+  clip-path: circle(35% at 50% 50%);
+}
+
+.first_circle,
+.second_circle,
+.third_circle {
+  height: 130vw;
+  width: 130vw;
+}
+
+.image_track {
+  opacity: 0;
+}
