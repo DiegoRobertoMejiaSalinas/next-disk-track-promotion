@@ -1,9 +1,9 @@
 .first_circle {
-  clip-path: circle(18% at 50% 50%);
+  clip-path: circle(20% at 50% 50%);
 }
 
 .second_circle {
-  clip-path: circle(30% at 50% 50%);
+  clip-path: circle(35% at 50% 50%);
 }
 
 .first_circle,
