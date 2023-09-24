@@ -3,8 +3,10 @@ const { colors } = require("tailwindcss/colors");
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    // "./src/components/*.js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -18,6 +20,9 @@ const config: Config = {
       },
     },
     extend: {
+      lineHeight: {
+        'extra-tight': '0.75 !important',
+      },
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
       },
