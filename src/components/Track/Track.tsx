@@ -23,7 +23,12 @@ const Track: FC<TrackProps> = ({}) => {
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-x-hidden bg-slate-100 dark:bg-slate-950">
+    <div
+      className={cn(
+        "relative h-screen flex items-center justify-center overflow-x-hidden bg-slate-100 dark:bg-slate-950",
+        styles.container
+      )}
+    >
       <TrackImages currentTrack={currentTrack} />
 
       <div
@@ -33,7 +38,7 @@ const Track: FC<TrackProps> = ({}) => {
         )}
       >
         <div className="h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start ">
-          <LargeHeading2 size={"lg"}>
+          <LargeHeading2 size={"lg"} variant={"inverted"}>
             {TRACKS[currentTrack].title}
           </LargeHeading2>
         </div>
