@@ -18,7 +18,7 @@ const TrackImages: FC<MusicTrackProps> = ({ currentTrack }) => {
 
   return (
     <motion.div
-      className="absolute top-0 left-0 w-full h-full z-1 bg-slate-100 dark:bg-slate-900"
+      className="absolute top-0 left-0 w-full h-full z-1"
       style={{ overflow: "hidden" }}
     >
       <TrackSingleImage

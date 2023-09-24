@@ -70,7 +70,12 @@ const Player: FC<PlayerProps> = ({
 
   return (
     <div className={cn("", className)} {...props}>
-      <audio ref={musicRef} controls style={{ display: "none" }}>
+      <audio
+        onEnded={onPlayerNextTrack}
+        ref={musicRef}
+        controls
+        style={{ display: "none" }}
+      >
         <source src={TRACKS[currentTrack].musicUrl} type="audio/mp3" />
       </audio>
       <motion.input

@@ -23,7 +23,7 @@ const Track: FC<TrackProps> = ({}) => {
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-x-hidden ">
+    <div className="relative h-screen flex items-center justify-center overflow-x-hidden bg-slate-100 dark:bg-slate-950">
       <TrackImages currentTrack={currentTrack} />
 
       <div
