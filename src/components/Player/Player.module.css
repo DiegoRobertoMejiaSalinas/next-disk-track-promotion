@@ -1,0 +1,17 @@
+.progress_bar {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #f53192;
+  cursor: pointer;
+}
+
+.progress_bar::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #f53192;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 2px rgba(255, 26, 26, 0.25);
+}
