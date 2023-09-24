@@ -28,7 +28,7 @@ const config: Config = {
       },
       colors: {
         ...colors,
-        "light-gold": "#f5bc51",
+        "light-gold": "#FF9429",
         "dark-gold": "#533519",
       },
     },
