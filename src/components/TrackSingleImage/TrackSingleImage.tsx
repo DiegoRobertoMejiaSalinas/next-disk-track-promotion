@@ -2,8 +2,8 @@ import { FC, HTMLAttributes } from "react";
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/cn";
 import Image from "next/image";
-import styles from "./MusicSingleTrack.module.css";
-import { TRACKS, TRACK_TITLES } from "@/constants/tracks";
+import styles from "./TrackSingleImage.module.css";
+import { TRACKS } from "@/constants/tracks";
 
 interface MusicSingleTrackProps extends HTMLAttributes<HTMLDivElement> {
   rotate: number;
@@ -47,7 +47,7 @@ const variantsRotate = {
   }),
 };
 
-const MusicSingleTrack: FC<MusicSingleTrackProps> = ({
+const TrackSingleImage: FC<MusicSingleTrackProps> = ({
   rotate,
   currentTrack,
   delayLevel,
@@ -87,4 +87,4 @@ const MusicSingleTrack: FC<MusicSingleTrackProps> = ({
   );
 };
 
-export default MusicSingleTrack;
+export default TrackSingleImage;

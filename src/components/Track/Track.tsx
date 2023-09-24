@@ -6,8 +6,8 @@ import styles from "./Track.module.css";
 import { cn } from "@/lib/cn";
 import React from "react";
 import { TRACK_TITLES } from "@/constants/tracks";
-import MusicTrack from "../MusicTrack/MusicTrack";
 import Player from "@/components/Player/Player";
+import TrackImages from "@/components/TrackImages/TrackImages";
 
 interface TrackProps {}
 
@@ -24,7 +24,7 @@ const Track: FC<TrackProps> = ({}) => {
 
   return (
     <div className="relative h-screen flex items-center justify-center overflow-x-hidden ">
-      <MusicTrack currentTrack={currentTrack} />
+      <TrackImages currentTrack={currentTrack} />
 
       <div
         className={cn(
