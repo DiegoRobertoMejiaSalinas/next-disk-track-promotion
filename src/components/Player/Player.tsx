@@ -1,4 +1,4 @@
-import { TRACK_MP3_URL } from "@/constants/tracks";
+import { TRACKS } from "@/constants/tracks";
 import { cn } from "@/lib/cn";
 import { FC, HTMLAttributes, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -50,7 +50,7 @@ const Player: FC<PlayerProps> = ({
     if (progressRef?.current && musicRef?.current) {
       musicRef.current.pause();
       musicRef.current.currentTime = 0;
-      musicRef.current.src = TRACK_MP3_URL[currentTrack];
+      musicRef.current.src = TRACKS[currentTrack].musicUrl;
 
       const canBrowserPlayAudio = await canAutoPlay.audio();
 
@@ -71,7 +71,7 @@ const Player: FC<PlayerProps> = ({
   return (
     <div className={cn("", className)} {...props}>
       <audio ref={musicRef} controls style={{ display: "none" }}>
-        <source src={TRACK_MP3_URL[currentTrack]} type="audio/mp3" />
+        <source src={TRACKS[currentTrack].musicUrl} type="audio/mp3" />
       </audio>
       <motion.input
         layout

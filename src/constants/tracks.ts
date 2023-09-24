@@ -34,4 +34,10 @@ export const TRACKS: ITrackItem[] = [
     musicUrl: "/tracks/1am_freestyle.mp3",
     title: "1AM Freestyle",
   },
+  {
+    imageUrl:
+      "https://res.cloudinary.com/purplesoda/image/upload/v1695514880/Test%20Projects/Joji%20Album%20Collection/alberto-restifo-cFplR9ZGnAk-unsplash_1_-modified_gpaazc.webp",
+    musicUrl: "/tracks/blahblahblah.mp3",
+    title: "BlahBlahBlah Demo",
+  },
 ];

@@ -5,7 +5,7 @@ import LargeHeading2 from "@/ui/LargeHeading2";
 import styles from "./Track.module.css";
 import { cn } from "@/lib/cn";
 import React from "react";
-import { TRACK_TITLES } from "@/constants/tracks";
+import { TRACKS, TRACK_TITLES } from "@/constants/tracks";
 import Player from "@/components/Player/Player";
 import TrackImages from "@/components/TrackImages/TrackImages";
 
@@ -15,7 +15,7 @@ const Track: FC<TrackProps> = ({}) => {
   const [currentTrack, setCurrentTrack] = useState(0);
 
   const onNextTrack = async () => {
-    if (currentTrack == 2) {
+    if (currentTrack == TRACKS.length - 1) {
       setCurrentTrack(0);
     } else {
       setCurrentTrack(currentTrack + 1);
@@ -34,7 +34,7 @@ const Track: FC<TrackProps> = ({}) => {
       >
         <div className="h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start ">
           <LargeHeading2 size={"lg"}>
-            {TRACK_TITLES[currentTrack]}
+            {TRACKS[currentTrack].title}
           </LargeHeading2>
         </div>
 
