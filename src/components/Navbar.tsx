@@ -4,6 +4,8 @@ import { FC, HTMLAttributes } from "react";
 import Button, { buttonVariants } from "@/ui/Button";
 import ThemeToggle from "./ThemeToggle";
 import { Playfair_Display } from "next/font/google";
+import { toast } from "react-hot-toast";
+import BuyDiscButton from "@/components/BuyDiscButton";
 
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
@@ -34,14 +36,7 @@ const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
 
       <div className="hidden md:flex gap-4">
         <ThemeToggle />
-        <Button
-          size={"default"}
-          variant={"outline"}
-          round={"non-rounded"}
-          className="px-10 h-15 sator"
-        >
-          Buy now
-        </Button>
+        <BuyDiscButton className="px-10 h-15 sator" />
       </div>
     </div>
   );
