@@ -47,7 +47,7 @@ const config: Config = {
       colors: {
         ...colors,
         "light-gold": "#FF9429",
-        "dark-gold": "#533519",
+        "dark-gold": "#bd6d24",
         "oblivion": "#131313"
       },
     },
