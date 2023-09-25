@@ -10,26 +10,34 @@ import {
 import { FC, HTMLAttributes, useEffect, useRef, useState } from "react";
 import { Pause, Play } from "lucide-react";
 import { cn } from "@/lib/cn";
+import { useMusicContext } from "@/providers/MusicProviders";
 
 const DURATION = 186;
 
 interface PlayerExperimentalProps extends HTMLAttributes<HTMLDivElement> {}
 
 const PlayerExperimental: FC<PlayerExperimentalProps> = ({ className }) => {
-  let [playing, setPlaying] = useState(false);
+  const { isPlaying, setIsPlaying, setIsPaused, isPaused } = useMusicContext();
   let [currentTime, setCurrentTime] = useState(0);
 
   return (
     <div className={cn(className)}>
       <ProgressBar
-        playing={playing}
+        playing={isPlaying}
         currentTime={currentTime}
         setCurrentTime={setCurrentTime}
       />
 
       <PlayerControls
-        playing={playing}
-        onPlayPause={() => setPlaying(!playing)}
+        playing={isPlaying}
+        onPause={() => {
+          setIsPaused(true);
+          setIsPlaying(false);
+        }}
+        onPlay={() => {
+          setIsPaused(false);
+          setIsPlaying(true);
+        }}
       />
     </div>
   );
@@ -170,17 +178,23 @@ function ProgressBar({ playing, currentTime, setCurrentTime }) {
   );
 }
 
-function PlayerControls({ playing, onPlayPause }) {
+function PlayerControls({ playing, onPause, onPlay }) {
+  const { isPaused, isPlaying } = useMusicContext();
+
   return (
     <div className="mt-6">
       <div className="flex items-center justify-between px-4">
-        <Button onClick={onPlayPause} className="w-20 h-20 p-3">
-          {playing ? (
+        {isPlaying && (
+          <Button onClick={onPause} className="w-12 h-12 p-3">
             <Pause className="w-full h-full" />
-          ) : (
+          </Button>
+        )}
+
+        {isPaused && (
+          <Button onClick={onPlay} className="w-12 h-12 p-3">
             <Play className="w-full h-full" />
-          )}
-        </Button>
+          </Button>
+        )}
       </div>
     </div>
   );
