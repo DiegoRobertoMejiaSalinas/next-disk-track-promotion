@@ -19,6 +19,7 @@ const paragraphVariants = cva(
         sm: "text-sm sm:text-base",
         lg: "text-lg md:text-xl",
         xl: "text-xl md:text-2xl",
+        doubleXl: "text-2xl md:text-3xl lg:text-4xl",
       },
     },
     defaultVariants: {
