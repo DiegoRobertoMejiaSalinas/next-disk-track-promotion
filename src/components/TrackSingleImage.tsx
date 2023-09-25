@@ -29,23 +29,6 @@ const imageVariants = {
   }),
 };
 
-const variantsRotate = {
-  rotate: ({
-    spinNumber,
-    delayLevel = 0,
-  }: {
-    spinNumber: number;
-    delayLevel?: number;
-  }) => ({
-    rotate: FULL_ROTATE_DEGREE * (spinNumber + 1),
-    transition: {
-      duration: 1.5,
-      type: "tween",
-      delay: 0.15 * delayLevel,
-    },
-  }),
-};
-
 const TrackSingleImage: FC<MusicSingleTrackProps> = ({
   rotate,
   currentTrack,
@@ -55,6 +38,24 @@ const TrackSingleImage: FC<MusicSingleTrackProps> = ({
   children,
   ...props
 }) => {
+  const variantsRotate = {
+    rotate: ({
+      spinNumber,
+      delayLevel = 0,
+    }: {
+      spinNumber: number;
+      delayLevel?: number;
+    }) => ({
+      rotate: FULL_ROTATE_DEGREE * (spinNumber + 1),
+      transition: {
+        duration: 1.5,
+
+        // ease: "linear",
+        delay: 0.15 * delayLevel,
+      },
+    }),
+  };
+
   return (
     <motion.div
       custom={{ spinNumber: rotate, delayLevel }}
