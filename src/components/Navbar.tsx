@@ -3,6 +3,9 @@ import Link from "next/link";
 import { FC, HTMLAttributes } from "react";
 import Button, { buttonVariants } from "@/ui/Button";
 import ThemeToggle from "./ThemeToggle";
+import { Fuggles, Plaster, Playfair_Display, Raleway } from "next/font/google";
+
+const raleway = Playfair_Display({ subsets: ["latin"], weight: ["400"] });
 
 interface NavbarProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -16,7 +19,12 @@ const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
       )}
     >
       <Link href={"/"} className={buttonVariants({ variant: "link" })}>
-        JOJI
+        <p className="logo_title text-4xl flex items-center">
+          JOJI{" "}
+          <span className={cn(raleway.className, "text-sm ml-5")}>
+            Unofficial Page
+          </span>
+        </p>
       </Link>
 
       <div className="md:hidden"></div>
