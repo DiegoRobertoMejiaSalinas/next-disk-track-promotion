@@ -38,7 +38,7 @@ const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
           size={"default"}
           variant={"outline"}
           round={"non-rounded"}
-          className="px-10 h-15"
+          className="px-10 h-15 sator"
         >
           Buy now
         </Button>
