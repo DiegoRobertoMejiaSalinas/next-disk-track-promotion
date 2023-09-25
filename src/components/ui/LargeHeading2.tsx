@@ -22,6 +22,7 @@ const headingVariants = cva("max-w-prose font-medium mx-auto text-center", {
     variant: {
       default: "text-slate-700 dark:text-slate-300",
       inverted: "text-slate-300 dark:text-slate-700",
+      clear: "text-slate-300",
     },
   },
   defaultVariants: {
