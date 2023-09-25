@@ -73,7 +73,7 @@ const TrackDiskImage: FC<MusicSingleTrackProps> = ({
       regexPattern
     ) as RegExpMatchArray;
     const realCurrentDegree = Number(coincidence[1]);
-    const closestMultiple = extractRotateDegree(ref.current?.style.transform);
+    const closestMultiple = extractRotateDegree(ref!.current!.style.transform);
 
     setCurrentDegree(realCurrentDegree - closestMultiple);
     controls.stop();

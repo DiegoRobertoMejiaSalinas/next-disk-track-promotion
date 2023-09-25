@@ -23,7 +23,7 @@ const Player: FC<PlayerProps> = ({ currentTrack, className, ...props }) => {
     setCurrentTrack,
   } = useMusicContext();
   const [isRotating, setIsRotating] = useState(false);
-  let fullBarRef = useRef();
+  let fullBarRef = useRef(null);
   const [duration, setDuration] = useState(0);
   const [width, setWidth] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
