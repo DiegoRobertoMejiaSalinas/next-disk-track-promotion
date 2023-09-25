@@ -7,7 +7,7 @@ interface ParallaxTextProps
     VariantProps<typeof parallaxTextVariants> {}
 
 const parallaxTextVariants = cva(
-  "max-w-prose text-slate-700 dark:text-slate-300 font-medium mr-5 ",
+  "max-w-prose text-slate-600 dark:text-slate-300 font-medium mr-5 ",
   {
     variants: {
       size: {
