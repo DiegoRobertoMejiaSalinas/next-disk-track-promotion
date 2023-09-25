@@ -2,7 +2,6 @@ import { FC, HTMLAttributes } from "react";
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import { cn } from "@/lib/cn";
 import Image from "next/image";
-import styles from "./TrackSingleImage.module.css";
 import { TRACKS } from "@/constants/tracks";
 
 interface MusicSingleTrackProps extends HTMLAttributes<HTMLDivElement> {
@@ -78,7 +77,10 @@ const TrackSingleImage: FC<MusicSingleTrackProps> = ({
           animate={currentTrack == index ? "visible" : "hidden"}
           custom={{ delayLevel }}
           variants={imageVariants}
-          className={cn("object-cover", styles.image_track)}
+          className={cn("object-cover")}
+          style={{
+            opacity: 0,
+          }}
           fill
           sizes="(max-width: 576px) 100vw, (max-width: 768px) 85vw, (max-width: 1200px) 75vw, 66vw"
         />

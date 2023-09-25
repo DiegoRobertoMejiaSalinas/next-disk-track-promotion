@@ -2,7 +2,6 @@
 
 import { FC, useState } from "react";
 import LargeHeading2 from "@/ui/LargeHeading2";
-import styles from "./Track.module.css";
 import { cn } from "@/lib/cn";
 import React from "react";
 import { TRACKS, TRACK_TITLES } from "@/constants/tracks";
@@ -25,20 +24,18 @@ const Track: FC<TrackProps> = ({}) => {
   return (
     <div
       className={cn(
-        "relative h-screen flex items-center justify-center overflow-x-hidden bg-slate-100 dark:bg-slate-950",
-        styles.container
+        "relative h-screen flex items-center justify-center overflow-x-hidden bg-slate-100 dark:bg-slate-950"
       )}
     >
       <TrackImages currentTrack={currentTrack} />
 
       <div
         className={cn(
-          "relative container max-w-7xl mx-auto w-full h-full z-50",
-          styles.text_container
+          "relative container max-w-7xl mx-auto w-full h-full z-50"
         )}
       >
         <div className="h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start ">
-          <LargeHeading2 size={"lg"} variant={"inverted"}>
+          <LargeHeading2 size={"extraXl"} variant={"inverted"}>
             {TRACKS[currentTrack].title}
           </LargeHeading2>
         </div>

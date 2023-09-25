@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import styles from "./TrackImages.module.css";
-import TrackSingleImage from "@/components/TrackSingleImage/TrackSingleImage";
+import TrackSingleImage from "@/components/TrackSingleImage";
 
 interface MusicTrackProps {
   currentTrack: number;
