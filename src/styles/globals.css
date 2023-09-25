@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Sator";
+  src: url("https://db.onlinewebfonts.com/t/1a62a7207bac186cdcdd1fd8e172c9db.eot");
+  src: url("https://db.onlinewebfonts.com/t/1a62a7207bac186cdcdd1fd8e172c9db.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/1a62a7207bac186cdcdd1fd8e172c9db.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/1a62a7207bac186cdcdd1fd8e172c9db.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/1a62a7207bac186cdcdd1fd8e172c9db.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/1a62a7207bac186cdcdd1fd8e172c9db.svg#Sator W00 Reg")
+      format("svg");
+  font-weight: 400;
+}
+
+.track_table {
+  z-index: 5;
+}
+
+.logo_title {
+  font-family: "Sator";
+}
