@@ -35,7 +35,7 @@ const Track: FC<TrackProps> = ({}) => {
         )}
       >
         <div className="h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start ">
-          <LargeHeading2 size={"extraXl"} variant={"inverted"}>
+          <LargeHeading2 className="sator" size={"extraXl"} variant={"clear"}>
             {TRACKS[currentTrack].title}
           </LargeHeading2>
         </div>
