@@ -36,7 +36,7 @@ export const buttonVariants = cva(
         default: "h-10 py-2 px-4",
         sm: "h-9 px-2 text-sm",
         lg: "h-12 px-12 text-md",
-        xl: "h-14 px-16 text-lg",
+        xl: "h-12 px-12 text-lg",
       },
     },
     defaultVariants: {
