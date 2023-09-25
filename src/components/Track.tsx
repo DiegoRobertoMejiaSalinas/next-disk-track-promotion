@@ -7,19 +7,13 @@ import React from "react";
 import { TRACKS, TRACK_TITLES } from "@/constants/tracks";
 import Player from "@/components/Player/Player";
 import TrackImages from "@/components/TrackImages/TrackImages";
+import { useMusicContext } from "@/providers/MusicProviders";
+import PlayerExperimental from "./PlayerExperimental/PlayerExperimental";
 
 interface TrackProps {}
 
 const Track: FC<TrackProps> = ({}) => {
-  const [currentTrack, setCurrentTrack] = useState(0);
-
-  const onNextTrack = async () => {
-    if (currentTrack == TRACKS.length - 1) {
-      setCurrentTrack(0);
-    } else {
-      setCurrentTrack(currentTrack + 1);
-    }
-  };
+  const { currentTrack, setCurrentTrack } = useMusicContext();
 
   return (
     <div
@@ -31,7 +25,7 @@ const Track: FC<TrackProps> = ({}) => {
 
       <div
         className={cn(
-          "relative container max-w-7xl mx-auto w-full h-full z-50"
+          "absolute container max-w-7xl mx-auto w-full h-full z-50 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
         )}
       >
         <div className="h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start ">
@@ -39,13 +33,14 @@ const Track: FC<TrackProps> = ({}) => {
             {TRACKS[currentTrack].title}
           </LargeHeading2>
         </div>
-
-        <Player
-          onHandleNextTrack={onNextTrack}
-          className="absolute left-1/2 bottom-10 w-60 -translate-x-1/2"
-          currentTrack={currentTrack}
-        />
       </div>
+
+      {/* <Player
+        className="absolute left-1/2 bottom-10 w-60 -translate-x-1/2 z-50"
+        currentTrack={currentTrack}
+      /> */}
+
+      <PlayerExperimental className="absolute left-1/2 bottom-10 w-60 -translate-x-1/2 z-50" />
     </div>
   );
 };
