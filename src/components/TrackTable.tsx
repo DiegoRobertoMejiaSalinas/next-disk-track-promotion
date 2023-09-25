@@ -164,7 +164,10 @@ const MusicCell = ({ row }: { row: ITableRow }) => {
 
 const TrackTable: FC<TableProps> = ({}) => {
   return (
-    <NextTable aria-label="Example table with dynamic content">
+    <NextTable
+      className="track_table"
+      aria-label="Example table with dynamic content"
+    >
       <TableHeader columns={columns}>
         {(column) => (
           <TableColumn key={`${column.key}`}>{column.label}</TableColumn>
