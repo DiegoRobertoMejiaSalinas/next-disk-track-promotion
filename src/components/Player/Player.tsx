@@ -7,7 +7,6 @@ import { Pause, Play, SkipForward } from "lucide-react";
 import canAutoPlay from "can-autoplay";
 import { useMusicContext } from "@/providers/MusicProviders";
 import { clearInterval } from "timers";
-import { useInterval } from "@/hooks/useInterval";
 
 interface PlayerProps extends HTMLAttributes<HTMLDivElement> {
   currentTrack: number;
@@ -31,15 +30,6 @@ const Player: FC<PlayerProps> = ({ currentTrack, className, ...props }) => {
 
   const musicRef = useRef<HTMLAudioElement>(null);
   // const progressRef = useRef<HTMLInputElement>(null);
-
-  useInterval(
-    () => {
-      if (currentTime < duration) {
-        setCurrentTime((t) => t + 1);
-      }
-    },
-    isPlaying ? 1000 : null
-  );
 
   const onPlayPause = () => {
     // const interval = setInterval(() => {
