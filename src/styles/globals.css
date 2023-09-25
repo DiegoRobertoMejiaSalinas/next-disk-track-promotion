@@ -22,6 +22,15 @@
   z-index: 5;
 }
 
+.playfair_display {
+  font-family: "Playfair Display" !important;
+  font-weight: 300;
+}
+
+.sator {
+  font-family: "Sator" !important;
+}
+
 .logo_title {
   font-family: "Sator";
 }
