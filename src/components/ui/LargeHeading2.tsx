@@ -16,8 +16,8 @@ const headingVariants = cva("max-w-prose font-medium mx-auto text-center", {
       default: "text-4xl md:text-5xl lg:text-6xl",
       sm: "text-2xl md:text-3xl",
       lg: "text-4xl md:text-5xl lg:text-6xl",
-      xl: "text-5xl md:text-6xl lg:text-7xl",
-      extraXl: "text-7xl md:text-8xl lg:text-9xl",
+      xl: "text-5xl lg:text-6xl",
+      extraXl: "text-6xl md:text-8xl lg:text-9xl",
     },
     variant: {
       default: "text-slate-700 dark:text-slate-300",
