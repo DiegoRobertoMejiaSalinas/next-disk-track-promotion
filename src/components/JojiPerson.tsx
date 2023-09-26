@@ -11,7 +11,7 @@ const variant: Variants = {
     transition: {
       duration: 1,
       type: "linear",
-      //   delay: 1.5,
+      delay: 0.6,
     },
   },
   hidden: {
@@ -30,10 +30,15 @@ interface JojiPersonProps extends HTMLAttributes<HTMLDivElement> {}
 
 const JojiPerson: FC<JojiPersonProps> = ({ className }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "0px -200px -300px 0px" });
+  const isInView = useInView(ref, { margin: "0px -100px -200px 0px" });
 
   return (
-    <div className={cn("aspect-square w-2/5 dark:opacity-50", className)}>
+    <div
+      className={cn(
+        "aspect-square w-full md:w-4/5 md:mx-auto lg:w-2/5 dark:opacity-50",
+        className
+      )}
+    >
       <MotionImage
         ref={ref}
         variants={variant}
