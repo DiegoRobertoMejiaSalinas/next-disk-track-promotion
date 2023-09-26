@@ -34,3 +34,29 @@
 .logo_title {
   font-family: "Sator";
 }
+
+.store {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 1024px) {
+  .store {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "cd hoodie" "vinyl vinyl";
+  }
+
+  .store_cd {
+    grid-area: cd;
+  }
+
+  .store_hoodie {
+    grid-area: hoodie;
+  }
+
+  .store_vinyl {
+    grid-area: vinyl;
+    justify-self: center;
+    margin: 0 auto;
+  }
+}
