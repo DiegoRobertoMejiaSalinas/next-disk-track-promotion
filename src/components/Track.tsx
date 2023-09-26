@@ -1,14 +1,13 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import LargeHeading2 from "@/ui/LargeHeading2";
 import { cn } from "@/lib/cn";
 import React from "react";
-import { TRACKS, TRACK_TITLES } from "@/constants/tracks";
-import Player from "@/components/Player/Player";
+import { TRACKS } from "@/constants/tracks";
 import TrackImages from "@/components/TrackImages/TrackImages";
 import { useMusicContext } from "@/providers/MusicProviders";
-import PlayerExperimental from "./PlayerExperimental/PlayerExperimental";
+import PlayerExperimental from "@/components/PlayerExperimental/PlayerExperimental";
 
 interface TrackProps {}
 
@@ -28,7 +27,7 @@ const Track: FC<TrackProps> = ({}) => {
           "absolute container max-w-7xl mx-auto w-full h-full z-50 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
         )}
       >
-        <div className="h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start ">
+        <div className="h-full gap-6 flex flex-col justify-center items-center lg:items-start ">
           <LargeHeading2 className="sator" size={"extraXl"} variant={"clear"}>
             {TRACKS[currentTrack].title}
           </LargeHeading2>
