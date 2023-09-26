@@ -20,8 +20,8 @@ const PlayerExperimental: FC<PlayerExperimentalProps> = ({ className }) => {
     const canBrowserPlayAudio = await canAutoPlay.audio();
 
     if (!!canBrowserPlayAudio.result) {
-      await musicRef.current!.load();
-      await musicRef.current!.play();
+      musicRef.current!.load();
+      musicRef.current!.play();
       setIsPaused(false);
       setIsPlaying(true);
     } else {
