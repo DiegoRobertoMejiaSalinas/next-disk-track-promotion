@@ -52,7 +52,7 @@ const Disc: FC<DiscProps> = ({ className, ...props }) => {
         className="relative aspect-square w-5/6 lg:w-11/12 lg:left-[initial] lg:translate-x-0 mx-auto lg:mx-0"
       >
         <MotionImage
-          alt="Joji Smithereens"
+          alt="Diego Mejia BicoDev Joji Smithereens"
           src={
             "https://res.cloudinary.com/purplesoda/image/upload/v1695566498/Test%20Projects/Joji%20Album%20Collection/replicate-prediction-wedthezb4u6p422hlehcgeibuq_s85pwv.webp"
           }
@@ -68,7 +68,7 @@ const Disc: FC<DiscProps> = ({ className, ...props }) => {
         className="absolute -bottom-16 -right-10 lg:-right-[5rem] pt-5 lg:pt-0 w-1/2 lg:w-7/12 xl:w-8/12 max-w-lg lg:max-w-md aspect-square lg:-bottom-28 -translate-y-1/2 lg:translate-y-full"
       >
         <MotionImage
-          alt="Joji Smithereens"
+          alt="Diego Mejia BicoDevJoji Smithereens"
           src={
             "https://res.cloudinary.com/purplesoda/image/upload/v1695566500/Test%20Projects/Joji%20Album%20Collection/SMITHEREENS_D2C_Exclusive_Vinyl_A_1_nc950f.webp"
           }
@@ -84,7 +84,7 @@ const Disc: FC<DiscProps> = ({ className, ...props }) => {
         className="absolute -top-12 pt-5 lg:pt-0 w-1/3 lg:w-sm max-w-lg lg:max-w-[13rem] shadow-2xl -left-5 lg:-left-12 xl:-left-20 aspect-square lg:top-auto lg:-bottom-16"
       >
         <MotionImage
-          alt="Joji Smithereens"
+          alt="Diego Mejia BicoDev Joji Smithereens"
           src={
             "https://res.cloudinary.com/purplesoda/image/upload/v1695566566/Test%20Projects/Joji%20Album%20Collection/e516ef8c0d6d-joji_xmuveb.webp"
           }

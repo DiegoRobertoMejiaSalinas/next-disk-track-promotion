@@ -47,7 +47,7 @@ const JojiPerson: FC<JojiPersonProps> = ({ className }) => {
         src={
           "https://res.cloudinary.com/purplesoda/image/upload/v1695680332/Test%20Projects/Joji%20Album%20Collection/GettyImages-1178153807_1_1_camu83.webp"
         }
-        alt="Diego Mejia Joji"
+        alt="Diego Mejia BicoDev Joji"
         fill
       />
     </div>
