@@ -19,20 +19,24 @@ const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
     <div
       {...props}
       className={cn(
-        "fixed backdrop-filter backdrop-blur-lg bg-white/50 dark:bg-slate-900/50 z-50 top-0 left-0 right-0 h-20 shadow-sm flex items-center justify-between px-32",
+        "fixed backdrop-filter backdrop-blur-lg bg-white/50 dark:bg-slate-900/50 z-50 top-0 left-0 right-0 h-20 shadow-sm flex items-center justify-between px-5 md:px-32 lg:px-16",
         className
       )}
     >
       <Link href={"/"} className={buttonVariants({ variant: "link" })}>
         <p className="logo_title text-4xl flex items-center">
           JOJI{" "}
-          <span className={cn(playfair_display.className, "text-sm ml-5")}>
+          <span
+            className={cn(playfair_display.className, "text-sm ml-3 md:ml-5")}
+          >
             Unofficial Page
           </span>
         </p>
       </Link>
 
-      <div className="md:hidden"></div>
+      <div className="md:hidden">
+        <ThemeToggle />
+      </div>
 
       <div className="hidden md:flex gap-4">
         <ThemeToggle />
