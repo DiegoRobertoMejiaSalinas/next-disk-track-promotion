@@ -42,7 +42,7 @@ const BuyDiscButton: FC<BuyDiscButtonProps> = ({ className }) => {
         </div>
       ),
       {
-        duration: 10000,
+        duration: 5000,
       }
     );
 
@@ -79,7 +79,7 @@ const BuyDiscButton: FC<BuyDiscButtonProps> = ({ className }) => {
         </div>
       ),
       {
-        duration: 10000,
+        duration: 5000,
       }
     );
   };
