@@ -37,17 +37,20 @@ const imageVariants: Variants = {
 
 const Disc: FC<DiscProps> = ({ className, ...props }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "0px -100px -300px 0px" });
+  const isInView = useInView(ref, { margin: "0px -100px -100px 0px" });
 
   return (
     <motion.div
       ref={ref}
       animate={isInView ? "visible" : "hidden"}
       variants={containerVariants}
-      className={cn("", className)}
+      className={cn("mt-20 lg:mt-0", className)}
     >
       {/* VINYL COVER */}
-      <motion.div variants={imageVariants} className="relative aspect-square ">
+      <motion.div
+        variants={imageVariants}
+        className="relative aspect-square w-5/6 lg:w-11/12 lg:left-[initial] lg:translate-x-0 mx-auto lg:mx-0"
+      >
         <MotionImage
           alt="Joji Smithereens"
           src={
@@ -62,7 +65,7 @@ const Disc: FC<DiscProps> = ({ className, ...props }) => {
       {/* DISC */}
       <motion.div
         variants={imageVariants}
-        className="relative pt-5 lg:pt-0 w-full max-w-lg lg:max-w-md lg:-right-[15rem] aspect-square lg:absolute lg:top-1/2 -translate-y-1/2"
+        className="absolute -bottom-16 -right-10 lg:-right-[5rem] pt-5 lg:pt-0 w-1/2 lg:w-7/12 xl:w-8/12 max-w-lg lg:max-w-md aspect-square lg:-bottom-28 -translate-y-1/2 lg:translate-y-full"
       >
         <MotionImage
           alt="Joji Smithereens"
@@ -78,7 +81,7 @@ const Disc: FC<DiscProps> = ({ className, ...props }) => {
       {/* PROFILE PIC JOJI */}
       <motion.div
         variants={imageVariants}
-        className="relative pt-5 lg:pt-0 w-full max-w-lg lg:max-w-[13rem] shadow-2xl lg:-left-20 aspect-square lg:absolute lg:-bottom-10"
+        className="absolute -top-12 pt-5 lg:pt-0 w-1/3 lg:w-sm max-w-lg lg:max-w-[13rem] shadow-2xl -left-5 lg:-left-12 xl:-left-20 aspect-square lg:top-auto lg:-bottom-16"
       >
         <MotionImage
           alt="Joji Smithereens"
