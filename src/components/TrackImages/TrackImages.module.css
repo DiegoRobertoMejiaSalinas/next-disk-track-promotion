@@ -1,14 +1,30 @@
 .first_circle {
-  clip-path: circle(12% at 50% 50%);
+  clip-path: circle(10% at 50% 50%);
 }
 
 .second_circle {
-  clip-path: circle(35% at 50% 50%);
+  clip-path: circle(30% at 50% 50%);
 }
 
 .first_circle,
 .second_circle,
 .third_circle {
-  height: 130vw;
-  width: 130vw;
+  height: 130vh;
+  width: 130vh;
+}
+
+@media screen and (min-width: 1024px) {
+  .first_circle {
+    clip-path: circle(12% at 50% 50%);
+  }
+
+  .second_circle {
+    clip-path: circle(35% at 50% 50%);
+  }
+  .first_circle,
+  .second_circle,
+  .third_circle {
+    height: 130vw;
+    width: 130vw;
+  }
 }
