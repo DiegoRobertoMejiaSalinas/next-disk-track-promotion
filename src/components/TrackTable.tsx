@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, Key } from "react";
+import { FC, Key, useRef } from "react";
 import {
   Table as NextTable,
   TableHeader,
@@ -12,6 +12,22 @@ import {
 } from "@nextui-org/table";
 import { AppleMusic } from "@/icons/apple-music";
 import { Spotify } from "@/icons/spotify";
+import { useInView, motion, Variants } from "framer-motion";
+
+const variants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      type: "tween",
+    },
+  },
+};
 
 export interface ITableColumn {
   key: string;
@@ -28,7 +44,7 @@ interface TableProps {}
 const columns: ITableColumn[] = [
   {
     key: "number",
-    label: "TRACK NUMBER",
+    label: "TRACK",
   },
   {
     key: "name",
@@ -163,18 +179,36 @@ const MusicCell = ({ row }: { row: ITableRow }) => {
 };
 
 const TrackTable: FC<TableProps> = ({}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
-    <NextTable
-      className="track_table"
-      aria-label="Example table with dynamic content"
+    <motion.div
+      ref={ref}
+      animate={isInView ? "visible" : "hidden"}
+      variants={variants}
+      className="overflow-y-hidden pb-20"
     >
-      <TableHeader columns={columns}>
-        {(column) => (
-          <TableColumn key={`${column.key}`}>{column.label}</TableColumn>
-        )}
-      </TableHeader>
-      {getRows(rows)}
-    </NextTable>
+      <NextTable className="track_table" aria-label="Joji Track">
+        <TableHeader columns={columns}>
+          {(column) => (
+            <TableColumn key={`${column.key}`}>
+              <p
+                style={{
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  wordBreak: "break-all",
+                  maxWidth: "80px",
+                }}
+              >
+                {column.label}
+              </p>
+            </TableColumn>
+          )}
+        </TableHeader>
+        {getRows(rows)}
+      </NextTable>
+    </motion.div>
   );
 };
 
