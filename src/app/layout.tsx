@@ -1,3 +1,4 @@
+import InfoMessage from "@/components/InfoMessage";
 import Navbar from "@/components/Navbar";
 import Providers from "@/providers/Providers";
 import "@/styles/globals.css";
@@ -63,10 +64,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <Toaster position="bottom-right" />
-          <div className="relative">
-            <Navbar />
-            <div className="-mt-20">{children}</div>
-          </div>
+
+          <Navbar />
+          <div className="-mt-20">{children}</div>
+          <InfoMessage className="fixed z-[70] bottom-10 left-6 sm:left-8 lg:bottom-16" />
         </Providers>
 
         {/* Allow for more height on mobile devices */}
