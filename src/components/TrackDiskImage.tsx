@@ -136,6 +136,7 @@ const TrackDiskImage: FC<MusicSingleTrackProps> = ({
             opacity: 0,
           }}
           fill
+          priority={index == 0 ? true : false}
           sizes="(max-width: 576px) 100vw, (max-width: 768px) 85vw, (max-width: 1200px) 75vw, 66vw"
         />
       ))}
