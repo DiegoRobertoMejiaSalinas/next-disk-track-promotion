@@ -12,7 +12,7 @@ import PlayerExperimental from "@/components/PlayerExperimental/PlayerExperiment
 interface TrackProps {}
 
 const Track: FC<TrackProps> = ({}) => {
-  const { currentTrack, setCurrentTrack } = useMusicContext();
+  const { currentTrack, isPlaying } = useMusicContext();
 
   return (
     <div
@@ -20,7 +20,7 @@ const Track: FC<TrackProps> = ({}) => {
         "relative h-screen flex items-center justify-center overflow-x-hidden bg-slate-100 dark:bg-slate-950"
       )}
     >
-      <TrackImages currentTrack={currentTrack} />
+      <TrackImages currentTrack={currentTrack} isPlaying={isPlaying} />
 
       <div
         className={cn(

@@ -4,12 +4,14 @@ import styles from "./TrackImages.module.css";
 import TrackSingleImage from "@/components/TrackSingleImage";
 import TrackDiskImage from "@/components/TrackDiskImage";
 import { TRACKS } from "@/constants/tracks";
+import TrackCenterImage from "@/components/TrackCenterImage";
 
 interface MusicTrackProps {
   currentTrack: number;
+  isPlaying: boolean;
 }
 
-const TrackImages: FC<MusicTrackProps> = ({ currentTrack }) => {
+const TrackImages: FC<MusicTrackProps> = ({ currentTrack, isPlaying }) => {
   const controls = useAnimation();
   const [rotate, setRotate] = useState(0);
 
@@ -24,6 +26,13 @@ const TrackImages: FC<MusicTrackProps> = ({ currentTrack }) => {
       // className="absolute top-0 left-0 w-full h-full z-1"
       style={{ overflow: "hidden" }}
     >
+      <TrackCenterImage
+        isPlaying={isPlaying}
+        currentTrack={currentTrack}
+        delayLevel={0}
+        rotate={rotate}
+        className={`z-30 ${styles.center}`}
+      ></TrackCenterImage>
       <TrackSingleImage
         controls={controls}
         currentTrack={currentTrack}
@@ -40,16 +49,6 @@ const TrackImages: FC<MusicTrackProps> = ({ currentTrack }) => {
       >
         <div className="absolute w-full h-full top-0 left-0 bg-slate-900 opacity-40 z-20"></div>
       </TrackDiskImage>
-
-      {/* <TrackSingleImage
-        controls={controls}
-        currentTrack={currentTrack}
-        delayLevel={2}
-        rotate={rotate}
-        className={`z-10 ${styles.second_circle}`}
-      >
-        <div className="absolute w-full h-full top-0 left-0 bg-slate-900 opacity-40 z-20"></div>
-      </TrackSingleImage> */}
 
       <TrackSingleImage
         controls={controls}

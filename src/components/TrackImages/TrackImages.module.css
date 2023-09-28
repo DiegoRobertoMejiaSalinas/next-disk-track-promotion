@@ -13,6 +13,12 @@
   width: 130vh;
 }
 
+.center {
+  width: 26vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
 @media screen and (min-width: 1024px) {
   .first_circle {
     clip-path: circle(12% at 50% 50%);
@@ -26,5 +32,11 @@
   .third_circle {
     height: 130vw;
     width: 130vw;
+  }
+
+  .center {
+    width: 31.2vw;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
   }
 }
