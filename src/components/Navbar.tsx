@@ -1,11 +1,12 @@
+"use client";
 import { cn } from "@/lib/cn";
 import Link from "next/link";
-import { FC, HTMLAttributes } from "react";
-import Button, { buttonVariants } from "@/ui/Button";
+import { FC, HTMLAttributes, useEffect, useState } from "react";
+import { buttonVariants } from "@/ui/Button";
 import ThemeToggle from "./ThemeToggle";
 import { Playfair_Display } from "next/font/google";
-import { toast } from "react-hot-toast";
 import BuyDiscButton from "@/components/BuyDiscButton";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
@@ -15,11 +16,31 @@ const playfair_display = Playfair_Display({
 interface NavbarProps extends HTMLAttributes<HTMLDivElement> {}
 
 const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
   return (
-    <div
-      {...props}
+    <motion.div
+      variants={{
+        visible: {
+          y: 0,
+        },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      // {...props}
       className={cn(
-        "fixed backdrop-filter backdrop-blur-lg bg-white/50 dark:bg-slate-900/50 z-50 top-0 left-0 right-0 h-20 shadow-sm flex items-center justify-between px-5 md:px-32 lg:px-16",
+        "sticky backdrop-filter backdrop-blur-lg bg-white/50 dark:bg-slate-900/50 z-50 top-0 left-0 right-0 h-20 shadow-sm flex items-center justify-between px-5 md:px-32 lg:px-16",
         className
       )}
     >
@@ -42,7 +63,7 @@ const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
         <ThemeToggle />
         <BuyDiscButton className="px-10 h-15 sator" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

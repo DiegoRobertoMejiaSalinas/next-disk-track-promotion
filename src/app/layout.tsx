@@ -62,11 +62,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Providers>
-          {children}
-
           <Toaster position="bottom-right" />
-
-          <Navbar />
+          <div className="relative">
+            <Navbar />
+            <div className="-mt-20">{children}</div>
+          </div>
         </Providers>
 
         {/* Allow for more height on mobile devices */}
