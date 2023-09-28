@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, useEffect, useRef } from "react";
+import { FC, HTMLAttributes, useEffect, useRef, useState } from "react";
 import { Pause, Play, SkipBack, SkipForward } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { useMusicContext } from "@/providers/MusicProviders";
@@ -11,9 +11,12 @@ interface PlayerExperimentalProps extends HTMLAttributes<HTMLDivElement> {}
 const PlayerExperimental: FC<PlayerExperimentalProps> = ({ className }) => {
   const { setIsPlaying, setIsPaused, currentTrack, setCurrentTrack } =
     useMusicContext();
+
+  const [canChange, setCanChange] = useState(true);
   const musicRef = useRef<HTMLAudioElement>(null);
 
   const onChange = async () => {
+    setCanChange(false);
     setIsPlaying(true);
     setIsPaused(false);
 
@@ -28,6 +31,10 @@ const PlayerExperimental: FC<PlayerExperimentalProps> = ({ className }) => {
       setIsPaused(true);
       setIsPlaying(false);
     }
+
+    setTimeout(() => {
+      setCanChange(true);
+    }, 1800);
   };
 
   useEffect(() => {
@@ -47,6 +54,8 @@ const PlayerExperimental: FC<PlayerExperimentalProps> = ({ className }) => {
   };
 
   const onPlayerNextTrack = async () => {
+    await setCanChange(false);
+
     const setTrack = () => {
       if (currentTrack == TRACKS.length - 1) {
         return 0;
@@ -58,9 +67,15 @@ const PlayerExperimental: FC<PlayerExperimentalProps> = ({ className }) => {
     const track = setTrack();
     setCurrentTrack(track);
     musicRef.current!.src = TRACKS[track].musicUrl;
+
+    setTimeout(() => {
+      setCanChange(true);
+    }, 1800);
   };
 
   const onPlayerBackTrack = async () => {
+    setCanChange(false);
+
     const setTrack = () => {
       if (currentTrack == 0) {
         return TRACKS.length - 1;
@@ -73,6 +88,10 @@ const PlayerExperimental: FC<PlayerExperimentalProps> = ({ className }) => {
     setCurrentTrack(track);
 
     musicRef.current!.src = TRACKS[track].musicUrl;
+
+    setTimeout(() => {
+      setCanChange(true);
+    }, 1800);
   };
 
   return (
@@ -93,6 +112,7 @@ const PlayerExperimental: FC<PlayerExperimentalProps> = ({ className }) => {
         onPlay={onPlay}
         onSkipNext={onPlayerNextTrack}
         onSkipBack={onPlayerBackTrack}
+        canChange={canChange}
       />
     </div>
   );
@@ -103,11 +123,13 @@ function PlayerControls({
   onPlay,
   onSkipNext,
   onSkipBack,
+  canChange,
 }: {
   onPause: () => void;
   onPlay: () => void;
   onSkipNext: () => void;
   onSkipBack: () => void;
+  canChange: boolean;
 }) {
   const { isPaused, isPlaying } = useMusicContext();
 
@@ -118,6 +140,7 @@ function PlayerControls({
           onClick={onSkipBack}
           className="w-12 h-12 p-3 rounded-full"
           variant={"clear"}
+          disabled={!canChange}
         >
           <SkipBack className="w-full h-full" />
         </Button>
@@ -127,6 +150,7 @@ function PlayerControls({
             onClick={onPause}
             className="w-12 h-12 p-3 rounded-full"
             variant={"clear"}
+            disabled={!canChange}
           >
             <Pause className="w-full h-full" />
           </Button>
@@ -137,6 +161,7 @@ function PlayerControls({
             onClick={onPlay}
             className="w-12 h-12 p-3 rounded-full"
             variant={"clear"}
+            disabled={!canChange}
           >
             <Play className="w-full h-full" />
           </Button>
@@ -146,6 +171,7 @@ function PlayerControls({
           onClick={onSkipNext}
           className="w-12 h-12 p-3 rounded-full"
           variant={"clear"}
+          disabled={!canChange}
         >
           <SkipForward className="w-full h-full" />
         </Button>
