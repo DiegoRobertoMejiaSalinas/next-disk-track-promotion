@@ -40,7 +40,7 @@ const Navbar: FC<NavbarProps> = ({ className, ...props }) => {
       transition={{ duration: 0.35, ease: "easeInOut" }}
       // {...props}
       className={cn(
-        "sticky backdrop-filter backdrop-blur-lg bg-white/50 dark:bg-slate-900/50 z-50 top-0 left-0 right-0 h-20 shadow-sm flex items-center justify-between px-5 md:px-32 lg:px-16",
+        "sticky backdrop-filter backdrop-blur-lg bg-white/50 dark:bg-slate-900/50 z-[100] top-0 left-0 right-0 h-20 shadow-sm flex items-center justify-between px-5 md:px-32 lg:px-16",
         className
       )}
     >
