@@ -67,7 +67,7 @@ export default function RootLayout({
 
           <Navbar />
           <div className="-mt-20">{children}</div>
-          <InfoMessage className="fixed z-[70] bottom-10 left-6 sm:left-8 lg:bottom-16" />
+          <InfoMessage className="fixed z-[70] bottom-10 left-6 sm:left-8 lg:bottom-16 xl:bottom-10" />
         </Providers>
 
         {/* Allow for more height on mobile devices */}
