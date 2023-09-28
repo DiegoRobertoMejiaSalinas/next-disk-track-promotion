@@ -20,7 +20,10 @@ export const metadata: Metadata = {
   keywords: "JOJI music Diego Mejia Tracks The Smithereens",
   twitter: {
     title: "JOJI | Unofficial Website",
-    description: "https://next-track-promotion.hedgehog-testing.xyz/",
+    description:
+      "This isn't an official Joji website, this is a personal project made by Diego Mejia, a big Joji fan.",
+    site: "https://next-track-promotion.hedgehog-testing.xyz/",
+    card: "summary_large_image",
   },
 
   openGraph: {
