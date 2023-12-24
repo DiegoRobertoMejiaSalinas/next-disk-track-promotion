@@ -4,6 +4,7 @@ import Providers from "@/providers/Providers";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -62,6 +63,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-3H66C7Z3FH" />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-3H66C7Z3FH');
+        `}
+        </Script>
+
         <Providers>
           <Toaster position="bottom-right" />
 
