@@ -80,7 +80,7 @@ export default function Home() {
               size={"xl"}
               round={"non-rounded"}
               variant={"outline"}
-              className="sator mt-20"
+              className="sator mt-20 btn-go-to-store"
             >
               Go to Store
             </Button>
@@ -126,7 +126,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <Button
-                className="mt-16 sator mx-auto w-2/3 md:w-3/4 lg:w-1/4 md:px-0"
+                className="mt-16 sator mx-auto w-2/3 md:w-3/4 lg:w-1/4 md:px-0 btn-get-tickets"
                 round={"non-rounded"}
                 variant={"outline"}
                 size={"xl"}

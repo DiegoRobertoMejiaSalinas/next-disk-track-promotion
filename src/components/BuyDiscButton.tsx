@@ -90,7 +90,7 @@ const BuyDiscButton: FC<BuyDiscButtonProps> = ({ className }) => {
       size={"default"}
       variant={"outline"}
       round={"non-rounded"}
-      className={cn(className)}
+      className={cn("btn-buy-disc", className)}
     >
       Buy disc
     </Button>
