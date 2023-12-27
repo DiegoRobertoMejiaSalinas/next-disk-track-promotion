@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "JOJI | Unofficial Website",
     description:
       "This isn't an official Joji website, this is a personal project made by Diego Mejia, a big Joji fan.",
-    site: "https://next-track-promotion.hedgehog-testing.xyz/",
+    site: "https://joji.diegomejia.dev/",
     card: "summary_large_image",
   },
 
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     countryName: "USA",
     siteName: "JOJI | Unofficial Website",
     title: "JOJI | Unofficial Website",
-    url: "https://next-track-promotion.hedgehog-testing.xyz/",
+    url: "https://joji.diegomejia.dev/",
     description:
       "This isn't an official Joji website, this is a personal project made by Diego Mejia, a big Joji fan.",
     musicians: "JOJI",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://next-track-promotion.hedgehog-testing.xyz/",
+    canonical: "https://joji.diegomejia.dev/",
   },
 };
 
